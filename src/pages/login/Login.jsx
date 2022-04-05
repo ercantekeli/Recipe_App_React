@@ -1,9 +1,37 @@
-import React from 'react'
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import styles from "./Login.module.css";
 
-const Login = () => {
+export default function Login() {
   return (
-    <div>Login</div>
-  )
+    <div className={styles.container}>
+      <Stack
+        component="form"
+        sx={{
+          width: "25ch",
+        }}
+        spacing={2}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          hiddenLabel
+          id="filled-hidden-label-small"
+          placeholder="USERNAME"
+          variant="filled"
+          size="normal"
+        />
+        <TextField
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          placeholder="PASSWORD"
+          variant="filled"
+          type="password"
+        />
+        <Button variant="contained">LOGIN</Button>
+      </Stack>
+    </div>
+  );
 }
-
-export default Login
