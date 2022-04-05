@@ -5,6 +5,9 @@ import Button from "@mui/material/Button";
 import styles from "./Login.module.css";
 
 export default function Login() {
+  const handleClick = () => {
+
+  }
   return (
     <div className={styles.container}>
       <Stack

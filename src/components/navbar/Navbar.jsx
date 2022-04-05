@@ -1,26 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 const Navbar = () => {
-  const homeName = "<Ercan/>";
+  const homeName = "<ERCAN/>";
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <Link to="/">
-          <span>{homeName}</span>Recipe
-        </Link>
+        <NavLink to="/">
+          <span>{homeName}</span>RECIPE
+        </NavLink>
       </div>
 
       <div className={styles.right}>
-        <Link to="/about">About</Link>
+        <NavLink to="/about">ABOUT</NavLink>
         <a
           href="https://github.com/ercantekeli"
           rel="noreferrer"
           target="_blank"
         >
-          Github
+          GITHUB
         </a>
-        <Link to="/login">LogOut</Link>
+        <NavLink to="/login" >LOGOUT</NavLink>
       </div>
     </div>
   );

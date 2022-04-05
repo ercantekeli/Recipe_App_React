@@ -30,3 +30,7 @@
     color: #1B6383;
     text-decoration: none;
 }
+
+.activeStyle{
+    display: none
+}
