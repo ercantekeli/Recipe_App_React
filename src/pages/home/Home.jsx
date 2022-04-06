@@ -7,8 +7,8 @@ const Home = () => {
     useEffect(() => {
         getFood();
     }, [])
-    const APP_ID = "a966a9a1";
-    const APP_KEY = "6254f0e04ac1951b03ca93096dc7e577";
+    const APP_ID = "cf9b1911";
+    const APP_KEY = "595aeb2b3a15df30d34b8d8aa5c2cb7b";
     const meal = "breakfast";
     let query = "pizza"
     const url=`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`
@@ -38,8 +38,15 @@ const Home = () => {
                  && (
                         <div>
                              {recipe.map((osman,index) => (
-                               <div>
-                                  <RecipeCard recipe={recipe} key={index}/>
+                               <div key={index}>
+                                  <RecipeCard recipe={osman}/>
                                 </div>
                             ))}
                         </div>
+                    )
+                    }
+            </div>
+    </div>
+  );
+};
+export default Home;

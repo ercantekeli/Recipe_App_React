@@ -4,10 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-const RecipeCard = ({recipe,key}) => {
-    const halit = [...recipe]
-    console.log(halit);
-    console.log(key);
+const RecipeCard = ({recipe}) => {
+  console.log(recipe)
         return (
         <div>
             <Card sx={{ maxWidth: 345 }}>
@@ -20,7 +18,7 @@ const RecipeCard = ({recipe,key}) => {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  <h1>{recipe?.recipe.label}</h1>
+                  <p>{recipe.recipe.label}</p>
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Lizards are a widespread group of squamate reptiles, with over 6,000
