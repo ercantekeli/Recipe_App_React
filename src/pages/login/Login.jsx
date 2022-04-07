@@ -1,40 +1,10 @@
-import * as React from "react";
-import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import styles from "./Login.module.css";
 
-export default function Login() {
-  const handleClick = () => {
+import React from 'react'
 
-  }
+const Login = () => {
   return (
-    <div className={styles.container}>
-      <Stack
-        component="form"
-        sx={{
-          width: "25ch",
-        }}
-        spacing={2}
-        noValidate
-        autoComplete="off"
-      >
-        <TextField
-          hiddenLabel
-          id="filled-hidden-label-small"
-          placeholder="USERNAME"
-          variant="filled"
-          size="normal"
-        />
-        <TextField
-          hiddenLabel
-          id="filled-hidden-label-normal"
-          placeholder="PASSWORD"
-          variant="filled"
-          type="password"
-        />
-        <Button variant="contained">LOGIN</Button>
-      </Stack>
-    </div>
-  );
+    <div>Login</div>
+  )
 }
+
+export default Login

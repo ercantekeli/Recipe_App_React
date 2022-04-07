@@ -1,29 +1,33 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import styles from "./Navbar.module.css";
+
+import React, {useState} from 'react'
+import { Nav, Logo, Hamburger, Menu, MenuLink } from './NavbarStyles'
+// import { GiHamburgerMenu } from 'react-icons/gi'
 const Navbar = () => {
-  const homeName = "<ERCAN/>";
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-        <NavLink to="/">
-          <span>{homeName}</span>RECIPE
-        </NavLink>
-      </div>
+    <Nav>
+      <Logo to="/home">
+        <i>{"<Ercan>"}</i>
+        <span>Recipe</span>
 
-      <div className={styles.right}>
-        <NavLink to="/about">ABOUT</NavLink>
-        <a
-          href="https://github.com/ercantekeli"
-          rel="noreferrer"
-          target="_blank"
-        >
-          GITHUB
-        </a>
-        <NavLink to="/login" >LOGOUT</NavLink>
-      </div>
-    </div>
-  );
-};
+      </Logo>
+      <Hamburger onClick={()=>setIsOpen(!isOpen)}>
+        <span/>
+        <span/>
+        <span/>
+        {/* <GiHamburgerMenu/> */}
+      </Hamburger>
 
-export default Navbar;
+      <Menu osman={isOpen}>
+        <MenuLink to="about" onClick={()=>setIsOpen(!isOpen)}>About</MenuLink>
+        <MenuLink to="github">Github</MenuLink>
+        <MenuLink to="/" onClick={()=>setIsOpen(!isOpen)}>Logout</MenuLink>
+      </Menu>
+
+
+    </Nav>
+  )
+}
+
+export default Navbar

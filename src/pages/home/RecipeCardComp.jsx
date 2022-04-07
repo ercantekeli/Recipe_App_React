@@ -7,26 +7,27 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 const RecipeCard = ({recipe}) => {
   console.log(recipe)
         return (
-        <div>
+        <div sx={{display:"flex", flexDirection:"row"}}>
+    
             <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
-                alt="green iguana2"
-              />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  <p>{recipe.recipe.label}</p>
+                  <h6>{recipe.recipe.label}</h6>
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squamate reptiles, with over 6,000
-                  species, ranging across all continents except Antarctica
-                </Typography>
+                
               </CardContent>
+
+              <CardMedia
+                borderRadius="500px"
+                component="img"
+                height="150"
+                width="100"
+                image={recipe.recipe.image}
+                alt="green iguana2"
+              />
             </CardActionArea>
-            <CardActions>
+            <CardActions style={{display:"flex", justifyContent:"center"}}>
               <Button size="small" color="primary">
                 View More
               </Button>
