@@ -1,28 +1,22 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import {
-  DetailContainer,
-  DetailPart,
-  HeaderContainer,
-  ImgContainer,
-  IngredContainer,
-  OtherPart,
-} from "./DetailsStyle";
-import dietSvg from "../../assets/diet.svg";
 
+import React from 'react'
+import { useLocation } from 'react-router-dom'
+import { DetailContainer, DetailPart, HeaderContainer, ImgContainer, IngredContainer, OtherPart } from './DetailsStyles';
+import dietSvg from "../../assets/diet.svg";
 const Details = () => {
   const location = useLocation();
-
+  // geçerli URL'yi temsil eden konum nesnesini döndürür
   const recipe = location.state.recipe1;
-  // console.log(recipe)
+  // navigate("/details", { state: { recipe } }); recipecard da bütün data json formatında state e gömülmüştü
+
+  console.log(recipe);
 
   return (
     <DetailContainer>
       <HeaderContainer>
-        <h1>{recipe.label}</h1>
+        <h1> {recipe.label}</h1>
         <img src={dietSvg} alt="" />
       </HeaderContainer>
-
       <DetailPart>
         <OtherPart>
           <>Nutrients</>
@@ -54,16 +48,17 @@ const Details = () => {
             </p>
           ))}
         </OtherPart>
-
         <ImgContainer>
-        <img src={recipe.image} alt={recipe.label} />
+          <img src={recipe.image} alt={recipe.label} />
         </ImgContainer>
 
         <IngredContainer>
           {recipe.ingredientLines.map((malzeme, index) => (
             <div key={index}>
-
-              <p>{index+1} * {malzeme}</p>
+              <p>
+                {index + 1} * {malzeme}
+                {/* ingredientLines içinde bir sürü obje var tek tek yazdır, başına no ekle 1*{malzeme} gibi */}
+              </p>
             </div>
           ))}
         </IngredContainer>
@@ -72,4 +67,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default Details

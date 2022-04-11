@@ -1,36 +1,45 @@
 
-import React from 'react'
-import { FormContainer, Header, LoginContainer, StyledImg, StyledInput, StyledForm, StyledButton } from './LoginStyles'
-import meal from '../../assets/meal.svg'
-
+import React from "react";
+import {
+  FormContainer,
+  Header,
+  LoginContainer,
+  StyledButton,
+  StyledForm,
+  StyledImg,
+  StyledInput,
+} from "./LoginStyles";
+import mealSvg from "../../assets/meal.svg";
+// import { useNavigate } from "react-router-dom";
 const Login = () => {
-  
+  // const navigate = useNavigate();
   const user = {
-    username:"user"
-  }
+    username: "user",
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sessionStorage.setItem("user", JSON.stringify(user));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    sessionStorage.setItem("user", "JSON.stringify(user)");
-    window.location.href="/home"
-  }
+    window.location.href = "/home";
+    // veri göndermeyeceksek bu şekilde sayfaya yönlendirebiliriz
+  };
 
   return (
     <LoginContainer>
       <FormContainer>
-        <StyledImg src={meal}/>
-        <Header>{"<Ercan/>"} Recipe</Header>
+        <StyledImg src={mealSvg} />
+        <Header>{"<Clarusway/>"}Recipe</Header>
+        {/* login sayfasındaki yuvarlak olayın içindeki yazı (Header) */}
 
         <StyledForm onSubmit={handleSubmit}>
-          <StyledInput type="text" placeholder="username" required/>
-          <StyledInput type="password" placeholder="password" required/>
+          {/* 3 kutunun olduğu form  */}
+          <StyledInput type="text" placeholder="username" required />
+          <StyledInput type="password" placeholder="password" required />
           <StyledButton type="submit">Login</StyledButton>
-
         </StyledForm>
-
       </FormContainer>
     </LoginContainer>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

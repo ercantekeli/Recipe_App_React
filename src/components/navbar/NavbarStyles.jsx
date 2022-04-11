@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 // import { ExternalLink } from "react-external-link";
@@ -43,7 +44,7 @@ export const MenuLink = styled(Link)`
   text-decoration: none;
   /* kelimelerin altı çizili olmasın */
   color: #02475e;
-
+  
   /* transition: all 0.3s ease-in; */
   font-size: 2rem;
   font-family: "Girassol", sans-serif;
@@ -61,7 +62,7 @@ export const MenuLink = styled(Link)`
 `;
 export const Menu = styled.div`
   /* navbardaki 3 kelime about ...hepsini içine alan sarmalın (kutunun ) özellikleri*/
-  background: #e1f1dd;
+background: #e1f1dd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +76,7 @@ export const Menu = styled.div`
     width: 100%;
     /* gap:2px; */
     /* props olarak, osman=true geldi mesela */
-max-height: ${({osman})=>(osman?"300px":"0px")}
+    max-height:${({osman})=>(osman?"300px":"0")}
     /* 3 çizgiye ilk tıklandığında 300 px açılsın, sonraki tıklamada kapansın */
     /* max-height:300px yazarsak hep açık olur */
     /* transition: max-height 0.3s ease-in; */
